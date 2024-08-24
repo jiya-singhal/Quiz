@@ -64,7 +64,7 @@ body {
     padding: 8px 16px; /* Adjusted padding for smaller screens */
     font-size: 0.9rem; /* Adjusted font size for smaller screens */
     color: #fff;
-    background-color: #BED7DC;
+    background-color: #464c4e;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -72,7 +72,7 @@ body {
 }
 
 .theme-toggle-container button:hover {
-    background-color: #B3C8CF; /* Slightly darker on hover */
+    background-color: #233a41; /* Slightly darker on hover */
 }
 
 /* Responsive Styles */

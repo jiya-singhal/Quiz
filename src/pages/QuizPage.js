@@ -30,7 +30,50 @@ const quizData = {
       hint: 'The color of the sky on a clear day is not green.'
     },
   ],
-  // Add more quizzes here if needed...
+  quiz2: [
+    {
+      type: 'single',
+      question: 'What is the capital of France?',
+      options: ['Berlin', 'Madrid', 'Paris', 'Lisbon'],
+      correctAnswer: 'Paris',
+      hint: 'It is known as the city of lights.'
+    },
+    {
+      type: 'multi',
+      question: 'Which of the following are fruits?',
+      options: ['Carrot', 'Apple', 'Banana', 'Broccoli'],
+      correctAnswers: ['Apple', 'Banana'],
+      hint: 'Both are commonly found in desserts.'
+    },
+    {
+      type: 'truefalse',
+      question: 'The sky is green.',
+      correctAnswer: 'false',
+      hint: 'The color of the sky on a clear day is not green.'
+    },
+  ],
+  quiz3: [
+    {
+      type: 'single',
+      question: 'What is the capital of France?',
+      options: ['Berlin', 'Madrid', 'Paris', 'Lisbon'],
+      correctAnswer: 'Paris',
+      hint: 'It is known as the city of lights.'
+    },
+    {
+      type: 'multi',
+      question: 'Which of the following are fruits?',
+      options: ['Carrot', 'Apple', 'Banana', 'Broccoli'],
+      correctAnswers: ['Apple', 'Banana'],
+      hint: 'Both are commonly found in desserts.'
+    },
+    {
+      type: 'truefalse',
+      question: 'The sky is green.',
+      correctAnswer: 'false',
+      hint: 'The color of the sky on a clear day is not green.'
+    },
+  ],
 };
 
 const QuizPage = () => {
