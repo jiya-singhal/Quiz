@@ -1,0 +1,76 @@
+/* src/assets/styles/HomePage.css */
+
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container */
+.homepage-container {
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Header */
+.homepage-container h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Quiz Selection */
+.quiz-selection-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.quiz-card {
+    padding: 15px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.quiz-card:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Theme Toggle Container */
+.theme-toggle-container {
+    margin-top: 20px;
+  }
+  
+  /* Theme Toggle Button */
+  .theme-toggle-container button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #BED7DC;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .theme-toggle-container button:hover {
+    background-color: #B3C8CF; /* Slightly darker on hover */
+  }

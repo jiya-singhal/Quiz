@@ -1,0 +1,37 @@
+.true-false-question {
+    margin: 20px auto; /* Center horizontally */
+    padding: 20px;
+    max-width: 600px; /* Set a maximum width for the container */
+    text-align: center;
+  }
+  
+  .true-false-question h2 {
+    margin-bottom: 10px;
+  }
+  
+  .true-false-question label {
+    display: block;
+    margin: 20px 0;
+  }
+  
+  .true-false-question button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #C4E4FF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  .true-false-question button:hover {
+    background-color: #B3C8CF;
+  }
+  
+  .true-false-question button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  

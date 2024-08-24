@@ -1,0 +1,37 @@
+/* src/assets/styles/darkTheme.css */
+body.dark {
+    background-color: #333;
+    color: #f0f0f0;
+}
+
+.quiz-card {
+    background-color: #444;
+    border: 1px solid #555;
+    padding: 20px;
+    margin: 10px 0;
+}
+
+button {
+    background-color: #C4E4FF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #B3C8CF;
+}
+
+.progress-bar {
+    background-color: #555;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.progress {
+    background-color: #E5DDC5;
+    height: 20px;
+}

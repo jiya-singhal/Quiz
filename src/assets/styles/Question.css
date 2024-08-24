@@ -1,0 +1,36 @@
+.question {
+  margin: 20px auto; /* Center horizontally */
+  padding: 20px;
+  max-width: 600px; /* Set a maximum width for the container */
+  text-align: center;
+}
+
+.options {
+  list-style-type: none;
+  padding: 0;
+}
+
+.option-button {
+  margin: 5px 0;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.option-button.selected {
+  background-color: #d3d3d3;
+}
+
+.feedback {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+}

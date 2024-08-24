@@ -1,0 +1,35 @@
+.quiz-page {
+  padding: 20px;
+}
+
+.question-number {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.timer {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.timer.urgent {
+  color: red; 
+}
+
+.feedback {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.feedback.green {
+  color: green;
+}
+
+.feedback.red {
+  color: red;
+}
+
+.theme-toggle {
+  margin-bottom: 20px;
+}
