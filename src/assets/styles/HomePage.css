@@ -14,8 +14,8 @@ body {
 
 /* Container */
 .homepage-container {
-    max-width: 600px;
-    padding: 20px;
+    max-width: 100%;
+    padding: 10px; /* Adjusted padding for smaller screens */
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -24,9 +24,9 @@ body {
 
 /* Header */
 .homepage-container h1 {
-    font-size: 2.5rem;
+    font-size: 1.8rem; /* Adjusted font size for smaller screens */
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* Adjusted margin for smaller screens */
     font-weight: 600;
 }
 
@@ -34,12 +34,12 @@ body {
 .quiz-selection-container {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    margin-bottom: 20px;
+    gap: 10px; /* Reduced gap for smaller screens */
+    margin-bottom: 15px;
 }
 
 .quiz-card {
-    padding: 15px;
+    padding: 10px; /* Adjusted padding for smaller screens */
     background-color: #007bff;
     color: #fff;
     border-radius: 5px;
@@ -56,21 +56,115 @@ body {
 
 /* Theme Toggle Container */
 .theme-toggle-container {
-    margin-top: 20px;
-  }
-  
-  /* Theme Toggle Button */
-  .theme-toggle-container button {
-    padding: 10px 20px;
-    font-size: 1rem;
+    margin-top: 15px; /* Adjusted margin for smaller screens */
+}
+
+/* Theme Toggle Button */
+.theme-toggle-container button {
+    padding: 8px 16px; /* Adjusted padding for smaller screens */
+    font-size: 0.9rem; /* Adjusted font size for smaller screens */
     color: #fff;
     background-color: #BED7DC;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
-  .theme-toggle-container button:hover {
+}
+
+.theme-toggle-container button:hover {
     background-color: #B3C8CF; /* Slightly darker on hover */
-  }
+}
+
+/* Responsive Styles */
+
+/* For mobile phones and smaller devices */
+@media (max-width: 767px) {
+    .homepage-container {
+        padding: 10px;
+    }
+
+    .homepage-container h1 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    .quiz-selection-container {
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .quiz-card {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .theme-toggle-container button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+/* For tablets and larger screens */
+@media (min-width: 768px) {
+    .homepage-container {
+        padding: 20px;
+    }
+
+    .homepage-container h1 {
+        font-size: 2rem;
+    }
+
+    .quiz-card {
+        font-size: 1.2rem;
+        padding: 15px;
+    }
+
+    .theme-toggle-container button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+
+/* For desktops and larger screens */
+@media (min-width: 1024px) {
+    .homepage-container {
+        max-width: 800px;
+        padding: 30px;
+    }
+
+    .homepage-container h1 {
+        font-size: 2.5rem;
+    }
+
+    .quiz-card {
+        font-size: 1.5rem;
+        padding: 20px;
+    }
+
+    .theme-toggle-container button {
+        padding: 12px 24px;
+        font-size: 1.2rem;
+    }
+}
+
+/* For very large screens */
+@media (min-width: 1440px) {
+    .homepage-container {
+        max-width: 1000px;
+        padding: 40px;
+    }
+
+    .homepage-container h1 {
+        font-size: 3rem;
+    }
+
+    .quiz-card {
+        font-size: 1.8rem;
+        padding: 25px;
+    }
+
+    .theme-toggle-container button {
+        padding: 15px 30px;
+        font-size: 1.5rem;
+    }
+}

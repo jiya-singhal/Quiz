@@ -1,0 +1,58 @@
+/* src/assets/styles/Responsive.css */
+
+/* Base styles for mobile-first */
+body {
+    font-size: 16px;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .column {
+    flex: 1;
+    padding: 15px;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+  }
+  
+  .timer {
+    font-size: 1.2em;
+  }
+  
+  .urgent {
+    color: red;
+  }
+  
+  @media (min-width: 768px) {
+    body {
+      font-size: 18px;
+    }
+  
+    .container {
+      padding: 20px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    body {
+      font-size: 20px;
+    }
+  
+    .container {
+      padding: 30px;
+    }
+  }
+  

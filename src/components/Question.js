@@ -1,43 +1,45 @@
-import React, { useState } from 'react';
-import '../assets/styles/Question.css';
+import React, { useState, useCallback } from 'react';
 
-const Question = ({ question, options, correctAnswer, onAnswer }) => {
-  const [selectedOption, setSelectedOption] = useState(null);
-  const [isAnswered, setIsAnswered] = useState(false);
+const Question = ({ question, options, correctAnswer, onAnswer, onUseHint, hintUsed }) => {
+  const [selectedOption, setSelectedOption] = useState('');
+  const [isSubmitted, setIsSubmitted] = useState(false); // New state to manage submission
 
-  const handleAnswerClick = (option) => {
-    if (isAnswered) return; // Prevent further clicks after answering
+  const handleOptionChange = useCallback((option) => {
     setSelectedOption(option);
-    setIsAnswered(true);
-    onAnswer(option === correctAnswer);
-  };
+  }, []);
+
+  const handleSubmit = useCallback(() => {
+    if (selectedOption === '') {
+      alert('Please select an option before submitting.');
+      return;
+    }
+
+    setIsSubmitted(true); // Disable further submissions
+    const isCorrect = selectedOption === correctAnswer;
+    onAnswer(isCorrect, selectedOption);
+  }, [selectedOption, correctAnswer, onAnswer]);
 
   return (
     <div className="question">
       <h2>{question}</h2>
-      <ul className="options">
-        {options.map((option, index) => (
-          <li key={index}>
-            <button
-              className={`option-button ${selectedOption === option ? (option === correctAnswer ? 'correct' : 'incorrect') : ''}`}
-              onClick={() => handleAnswerClick(option)}
-              disabled={isAnswered}
-            >
-              {option}
-            </button>
-          </li>
-        ))}
-      </ul>
-      
-      {isAnswered && (
-        <div className="feedback">
-          {selectedOption === correctAnswer ? (
-            <p className="correct">Yes, correct! The answer is {correctAnswer}.</p>
-          ) : (
-            <p className="incorrect">Incorrect. The correct answer is {correctAnswer}.</p>
-          )}
+      {options.map((option) => (
+        <div key={option}>
+          <input
+            type="radio"
+            id={option}
+            name="option"
+            value={option}
+            onChange={() => handleOptionChange(option)}
+            checked={selectedOption === option}
+          />
+          <label htmlFor={option}>{option}</label>
         </div>
-      )}
+      ))}
+      <div className="question-actions">
+        <button onClick={handleSubmit} disabled={isSubmitted}>Submit</button>
+        {/* Display the "Use Hint" button only if the hint hasn't been used */}
+        {!hintUsed && <button onClick={onUseHint} disabled={isSubmitted}>Use Hint</button>}
+      </div>
     </div>
   );
 };

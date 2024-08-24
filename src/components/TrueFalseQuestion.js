@@ -1,45 +1,21 @@
 import React, { useState } from 'react';
 import '../assets/styles/TrueFalseQuestion.css';
 
-const TrueFalseQuestion = ({ question, correctAnswer, onAnswer }) => {
-  const [selectedOption, setSelectedOption] = useState(null);
-  const [isAnswered, setIsAnswered] = useState(false);
-
-  const handleOptionChange = (event) => {
-    setSelectedOption(event.target.value);
-  };
-
-  const handleSubmit = () => {
-    setIsAnswered(true);
-    onAnswer(selectedOption === correctAnswer);
+const TrueFalseQuestion = ({ question, correctAnswer, onAnswer, onUseHint, hintUsed }) => {
+  const handleSubmit = (selectedAnswer) => {
+    const isCorrect = selectedAnswer.toString() === correctAnswer.toString();
+    onAnswer(isCorrect, selectedAnswer);
   };
 
   return (
-    <div className="true-false-question">
+    <div className="question">
       <h2>{question}</h2>
-      <label>
-        <input
-          type="radio"
-          name="true-false"
-          value="true"
-          onChange={handleOptionChange}
-          disabled={isAnswered}
-        />
-        True
-      </label>
-      <label>
-        <input
-          type="radio"
-          name="true-false"
-          value="false"
-          onChange={handleOptionChange}
-          disabled={isAnswered}
-        />
-        False
-      </label>
-      <button onClick={handleSubmit} disabled={isAnswered || selectedOption === null}>
-        {isAnswered ? 'Next' : 'Submit'}
-      </button>
+      <div>
+        <button onClick={() => handleSubmit(true)}>True</button>
+        <button onClick={() => handleSubmit(false)}>False</button>
+      </div>
+      {/* Display the "Use Hint" button only if the hint hasn't been used */}
+      {!hintUsed && <button onClick={onUseHint}>Use Hint</button>}
     </div>
   );
 };

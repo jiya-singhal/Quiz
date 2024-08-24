@@ -1,44 +1,46 @@
 import React, { useState } from 'react';
 import '../assets/styles/MultiSelectionQuestion.css';
 
-const MultiSelectQuestion = ({ question, options, correctAnswers, onAnswer }) => {
+
+const MultiSelectQuestion = ({ question, options, correctAnswers, onAnswer, onUseHint, hintUsed }) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
-  const [isAnswered, setIsAnswered] = useState(false);
 
   const handleOptionChange = (option) => {
-    setSelectedOptions((prevSelected) =>
-      prevSelected.includes(option)
-        ? prevSelected.filter((o) => o !== option)
-        : [...prevSelected, option]
+    setSelectedOptions((prevOptions) => 
+      prevOptions.includes(option) 
+        ? prevOptions.filter((o) => o !== option) 
+        : [...prevOptions, option]
     );
   };
 
   const handleSubmit = () => {
-    const isCorrect =
-      selectedOptions.length === correctAnswers.length &&
-      selectedOptions.every((option) => correctAnswers.includes(option));
-    setIsAnswered(true);
-    onAnswer(isCorrect);
+    if (selectedOptions.length === 0) {
+      alert('Please select at least one option before submitting.');
+      return;
+    }
+    const isCorrect = correctAnswers.every((answer) => selectedOptions.includes(answer)) && selectedOptions.every((answer) => correctAnswers.includes(answer));
+    onAnswer(isCorrect, selectedOptions);
   };
 
   return (
-    <div className="multi-select-question">
+    <div className="question">
       <h2>{question}</h2>
-      {options.map((option, index) => (
-        <label key={index}>
+      {options.map((option) => (
+        <div key={option}>
           <input
             type="checkbox"
+            id={option}
+            name="option"
             value={option}
-            checked={selectedOptions.includes(option)}
             onChange={() => handleOptionChange(option)}
-            disabled={isAnswered}
+            checked={selectedOptions.includes(option)}
           />
-          {option}
-        </label>
+          <label htmlFor={option}>{option}</label>
+        </div>
       ))}
-      <button onClick={handleSubmit} disabled={isAnswered}>
-        {isAnswered ? 'Next' : 'Submit'}
-      </button>
+      <button onClick={handleSubmit}>Submit</button>
+      {/* Display the "Use Hint" button only if the hint hasn't been used */}
+      {!hintUsed && <button onClick={onUseHint}>Use Hint</button>}
     </div>
   );
 };
